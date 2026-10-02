@@ -1,0 +1,16 @@
+@import "tailwindcss";
+
+@theme {
+  --color-navy: #0b3251;
+  --color-navy-soft: #37506a;
+  --color-magenta: #dc238a;
+  --color-magenta-deep: #b81a72;
+  --color-mist: #f3f6f9;
+  --font-display: "Fraunces", Georgia, serif;
+  --font-sans: "Figtree", system-ui, sans-serif;
+}
+
+html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body { @apply bg-white font-sans text-navy antialiased; }
+:focus-visible { outline: 2px solid var(--color-magenta); outline-offset: 3px; }
