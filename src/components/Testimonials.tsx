@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Section from "./Section";
 import { testimonials } from "../content";
 
 export default function Testimonials() {
@@ -13,10 +14,9 @@ export default function Testimonials() {
       aria-roledescription="carousel"
       aria-label="What people say"
     >
-      <div className="mx-auto max-w-4xl px-6 py-20 text-center sm:py-28">
-        <h2 className="text-lg font-medium text-white/70">What people say</h2>
-
-        <div className="mt-10 overflow-hidden" aria-live="polite">
+      <Section n="03" title="What people say" dark>
+      <div className="text-center">
+        <div className="overflow-hidden" aria-live="polite">
           <div
             className="flex transition-transform duration-500 ease-out motion-reduce:transition-none"
             style={{ transform: `translateX(-${i * 100}%)` }}
@@ -59,6 +59,7 @@ export default function Testimonials() {
           </button>
         </div>
       </div>
+      </Section>
     </section>
   );
 }

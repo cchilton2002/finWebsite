@@ -1,10 +1,12 @@
 import { useState, type FormEvent } from "react";
+import Section from "./Section";
+import { Link } from "react-router-dom";
 import { contact } from "../content";
 
 type Status = "idle" | "sending" | "sent" | "error";
 
 const field =
-  "mt-2 w-full rounded-lg border border-navy/20 bg-white px-4 py-3 text-navy placeholder:text-navy/40 focus:border-magenta focus:outline-none focus:ring-2 focus:ring-magenta/30";
+  "mt-2 w-full rounded-none border-0 border-b border-navy/25 bg-transparent px-0 py-3 text-navy placeholder:text-navy/40 focus:border-magenta focus:outline-none focus:ring-0";
 
 export default function Contact() {
   const [status, setStatus] = useState<Status>("idle");
@@ -36,7 +38,8 @@ export default function Contact() {
   }
 
   return (
-    <section id="contact" className="mx-auto max-w-6xl px-6 py-20 sm:py-28">
+    <section id="contact">
+      <Section n="05" title="Contact">
       <div className="grid gap-14 lg:grid-cols-12 lg:gap-20">
         <div className="lg:col-span-5">
           <h2 className="font-display text-4xl font-medium leading-tight sm:text-5xl">
@@ -61,9 +64,9 @@ export default function Contact() {
                 </a>
               </li>
               <li>
-                <a href={contact.resourcesPdf} target="_blank" rel="noopener noreferrer" className="underline decoration-navy/30 underline-offset-4 hover:text-navy hover:decoration-magenta">
-                  Free resources (PDF)
-                </a>
+                <Link to="/resources" className="underline decoration-navy/30 underline-offset-4 hover:text-navy hover:decoration-magenta">
+                  Free resources
+                </Link>
               </li>
             </ul>
           </div>
@@ -71,12 +74,12 @@ export default function Contact() {
 
         <div className="lg:col-span-7">
           {status === "sent" ? (
-            <div role="status" className="rounded-2xl bg-mist p-10">
+            <div role="status" className="border-t border-navy/15 pt-8">
               <h3 className="font-display text-2xl font-medium">Thank you, message received.</h3>
               <p className="mt-3 text-navy-soft">We&rsquo;ll come back to you personally.</p>
             </div>
           ) : (
-            <form onSubmit={onSubmit} className="space-y-6 rounded-2xl bg-mist p-6 sm:p-10">
+            <form onSubmit={onSubmit} className="space-y-8">
               <div className="grid gap-6 sm:grid-cols-2">
                 <label className="block font-medium">
                   Name
@@ -115,6 +118,7 @@ export default function Contact() {
           )}
         </div>
       </div>
+      </Section>
     </section>
   );
 }

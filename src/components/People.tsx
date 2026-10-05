@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Section from "./Section";
 import { people, type Person } from "../content";
 
 function Photo({ person }: { person: Person }) {
@@ -24,7 +25,8 @@ function Photo({ person }: { person: Person }) {
 
 export default function People() {
   return (
-    <section id="people" className="mx-auto max-w-6xl px-6 py-20 sm:py-28">
+    <section id="people">
+      <Section n="02" title="People">
       <h2 className="font-display text-4xl font-medium sm:text-5xl">The people behind Wiseheart</h2>
       <div className="mt-16 space-y-24">
         {people.map((p, i) => (
@@ -43,6 +45,7 @@ export default function People() {
           </article>
         ))}
       </div>
+      </Section>
     </section>
   );
 }

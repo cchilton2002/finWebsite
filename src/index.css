@@ -7,7 +7,7 @@
   --color-magenta-deep: #b81a72;
   --color-mist: #f3f6f9;
   --font-display: "Fraunces", Georgia, serif;
-  --font-sans: "Figtree", system-ui, sans-serif;
+  --font-sans: "Geist", system-ui, sans-serif;
 }
 
 html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
